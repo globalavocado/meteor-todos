@@ -1,31 +1,19 @@
 <head>
-  <title>Todo List</title>
+  <title>todo_app</title>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-  <h1>to-do list</h1>
+  <h1>Welcome to Meteor!</h1>
 
-  <form class="new-task">
-    <input type="text" name="text" placeholder="Type to add new tasks" />
-  </form>
-</header>
-
-    <ul>
-      {{#each tasks}}
-        {{> task}}
-      {{/each}}
-    </ul>
-  </div>
+  {{> todos}}
 </body>
 
-<template name="task">
-  <li class="{{#if checked}}checked{{/if}}">
-    <button class="delete">&times;</button>
+<template name="todos">
+  {{#each todos}}
+    {{> todo}}
+  {{/each}}
+</template>
 
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-
-    <span class="text">{{text}}</span>
-  </li>
+<template name="todo">
+  <p>{{name}}</p>
 </template>
