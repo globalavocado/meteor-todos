@@ -4,9 +4,12 @@ describe("TodosTemplate", function() {
     var div = document.createElement("div");
     var data = [{name: "test1"}, {name: "test2"}];
 
-    var comp = Blaze.renderWithData(Template.todos, data);
+    // var comp = Blaze.renderWithData(Template.todos, data);
 
-    Blaze.insert(comp, div);
+    // Blaze.insert(comp, div);
+
+    var comp = Blaze.render(Blaze.With(data, function(){return Template.todos;}));
+    Blaze.insert (comp, div);
   });
 
   it("contains all the passed todos", function() {
