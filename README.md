@@ -3,7 +3,8 @@
 following <a href="https://www.meteor.com/try">this</a> and <a href="https://semaphoreci.com/blog/2014/11/19/meteorjs-getting-started.html">this</a> tutorial.
 
 
-When storing tasks as a MongoDB collection, insert tasks from the console like this:
+Before adding the input field in the first tutorial, manually insert tasks into MongoDB like this:
+
 ~~~~
 	...=# meteor mongo
 	...=# db.tasks.insert({ text: "Hello world!", createdAt: new Date() });
