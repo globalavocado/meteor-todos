@@ -1,0 +1,17 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to Meteor!</h1>
+    </header>
+    
+    <ul>
+      {{#each todos}}
+        {{> todo}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="todo">
+  <li>{{name}}</li>
+</template>
