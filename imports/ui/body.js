@@ -1,11 +1,11 @@
 import { Template } from 'meteor/templating';
 
+import { Todos } from '../api/todos.js';
+
 import './body.html';
 
 Template.body.helpers({
-  todos: [
-    { name: 'Learn Javascript' },
-    { name: 'Learn MeteorJS' },
-    { name: 'Create a Todo' },
-  ],
+  todos() {
+  	return Todos.find({});
+  },
 });
