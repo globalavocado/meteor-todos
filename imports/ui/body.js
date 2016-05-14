@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 
 import { Todos } from '../api/todos.js';
 
+import './todo.js';
 import './body.html';
 
 Template.body.helpers({
