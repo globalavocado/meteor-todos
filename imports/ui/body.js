@@ -36,12 +36,7 @@ Template.body.events({
     const name = target.name.value;
 
     // insert a task into the collection
-    Todos.insert({
-      name,
-      createdAt: new Date(), // current time
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+    Meteor.call('todos.insert', name);
 
     // clear form
     target.name.value = '';

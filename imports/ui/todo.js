@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
 import { Todos } from '../api/todos.js';
@@ -8,11 +9,9 @@ Template.todo.events({
 	'click .toggle-checked'() {
 
 		//set the checked property to the opposite of its current value
-		Todos.update(this._id, {
-			$set: { checked: ! this.checked },
-		});
+		Meteor.call('todos.setChecked', this._id, !this.checked);
 	},
 	'click .delete'() {
-		Todos.remove(this._id);
+		Meteor.call('todos.remove', this._id);
 	},
 });
