@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 
@@ -14,7 +15,7 @@ Template.body.helpers({
   todos() {
     const instance = Template.instance();
     if (instance.state.get('hideCompleted')) {
-      //if hide-completed is checked, filter tasks
+      //if hide completed is checked, filter tasks
       return Todos.find({ checked: { $ne: true } }, { sort: {createdAt: -1 } });
     }
     //otherwise return all of the tasks
@@ -38,6 +39,8 @@ Template.body.events({
     Todos.insert({
       name,
       createdAt: new Date(), // current time
+      owner: Meteor.userId(),
+      username: Meteor.user().username,
     });
 
     // clear form
