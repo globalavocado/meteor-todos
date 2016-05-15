@@ -5,7 +5,13 @@
         <div class="col-sm-6">
       
           <header>
-            <h1>Meteor To-dos</h1>
+            <h1>Meteor To-dos ({{incompleteCount}})</h1>
+
+            <label class="hide-completed">
+              <input type="checkbox" />
+              hide completed tasks 
+            </label>
+
             <form class="new-task">
               <input type="text" name="name" placeholder="type to add new tasks" />
             </form>
