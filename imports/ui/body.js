@@ -24,10 +24,7 @@ Template.body.helpers({
   },
   incompleteCount() {
     return Todos.find({ checked: { $ne: true } }).count();
-  },
-  currentUserName() {
-    return Meteor.user().username;
-  },
+  }
 });
 
 Template.body.events({
